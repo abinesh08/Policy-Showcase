@@ -26,7 +26,7 @@ Handles:
 
 | Component | Technology |
 |------------|-------------|
-| Language | Java 17 |
+| Language | Java 21 |
 | Framework | Spring Boot 3.x |
 | Build Tool | Maven |
 | Storage | File System (no database) |
