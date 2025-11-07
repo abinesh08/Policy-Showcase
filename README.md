@@ -1,50 +1,86 @@
-# Policy-Showcase
+# 🏛️ Policy-Showcase
 
-Policy-Showcase is a simple Spring Boot microservices project that displays images with descriptions and hashtags (like #Women, #Men, #Dravidian).
-It uses file-based storage instead of a database and has two independent services:
+**Policy-Showcase** is a simple **Spring Boot microservices project** that displays images with descriptions and hashtags (like `#Women`, `#Men`, `#Dravidian`).  
+It uses **file-based storage** instead of a database and includes **two independent services**:
 
-Admin Service:
-Handles login (from file), forgot username/password, image upload, update, delete, and manage hashtags.
+---
 
-Display Service:
-Displays the uploaded images and allows filtering based on hashtags.
+## 🧩 Services Overview
 
-🧑‍💼 Admin Service
-🔹 Features
+### 🧑‍💼 Admin Service
+Handles:
+- Login (from file)
+- Forgot username/password
+- Upload image and hashtags
+- Update or delete uploaded data
+- View all uploaded policies
 
-Login (reads from file)
+### 👁️ Display Service
+Handles:
+- Displaying uploaded images and about text
+- Filtering by hashtags (e.g., `#Women`, `#Dravidian`, etc.)
 
-Forgot username
+---
 
-Forgot password
+## ⚙️ Tech Stack
 
-Reset password
+| Component | Technology |
+|------------|-------------|
+| Language | Java 17 |
+| Framework | Spring Boot 3.x |
+| Build Tool | Maven |
+| Storage | File System (no database) |
+| API Type | RESTful |
+| Data Format | Text File |
 
-Upload image and hashtags
+---
 
-Update or delete uploaded data
+## 🧑‍💼 **Admin Service**
 
-View all uploaded policies
+### 🔹 Features
+- Login (reads credentials from file)
+- Forgot username
+- Forgot password
+- Reset password
+- Upload image and hashtags
+- Update or delete uploaded data
+- View all uploaded policies
 
-🔹 API Endpoints
-Method	Endpoint	Description
-POST	/api/admin/login	Login using username and password
-GET	/api/admin/forgot-username	Retrieve saved username
-GET	/api/admin/forgot-password	Retrieve saved password
-PUT	/api/admin/reset-password	Reset password and update file
-POST	/api/admin/upload	Upload image, about text, and hashtags
-PUT	/api/admin/update/{imageName}	Update existing policy info
-DELETE	/api/admin/delete/{imageName}	Delete policy entry
-GET	/api/admin/policies	View all uploaded policies
+---
 
-👁️ Display Service
-🔹 Features
+### 🔹 API Endpoints
 
-Show all uploaded policies
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| **POST** | `/api/admin/login` | Login using username and password |
+| **GET** | `/api/admin/forgot-username` | Retrieve saved username |
+| **GET** | `/api/admin/forgot-password` | Retrieve saved password |
+| **PUT** | `/api/admin/reset-password` | Reset password and update file |
+| **POST** | `/api/admin/upload` | Upload image, about text, and hashtags |
+| **PUT** | `/api/admin/update/{imageName}` | Update existing policy info |
+| **DELETE** | `/api/admin/delete/{imageName}` | Delete policy entry |
+| **GET** | `/api/admin/policies` | View all uploaded policies |
 
-Filter by hashtags (e.g., #Women, #Dravidian, etc.)
+---
 
-🔹 API Endpoints
-Method	Endpoint	Description
-GET	/api/display/all	Get all policies
-GET	/api/display/filter/{hashtag}	Filter policies by hashtag
+## 👁️ **Display Service**
+
+### 🔹 Features
+- Show all uploaded policies
+- Filter by hashtags (like `#Women`, `#Dravidian`, etc.)
+
+---
+
+### 🔹 API Endpoints
+
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| **GET** | `/api/display/all` | Get all policies |
+| **GET** | `/api/display/filter/{hashtag}` | Filter policies by hashtag |
+
+---
+
+## 🧾 **File-Based Storage**
+
+### `admin-credentials.txt`
+Stores single admin login details:
